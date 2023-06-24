@@ -2,15 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TStartMana : MonoBehaviour
+public class StartMana : MonoBehaviour
 {
     public float Delay = 3.0f;
     [SerializeField][Tooltip("背景のマテリアル選択")] private Material BackGround;
     [SerializeField] [Tooltip("道のマテリアル選択")] private Material Rail;
-    [SerializeField] private Player _player;
-    [SerializeField] private EnemyPlayer _enemy1;
-    [SerializeField] private EnemyPlayer _enemy2;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +20,6 @@ public class TStartMana : MonoBehaviour
         yield return new WaitForSeconds(Delay);
 
         StartBackGround();
-        //ここでスタート
-        _player.SetIsStart(true);
-        _enemy1.SetIsStart(true);
-        _enemy2.SetIsStart(true);
     }
 
     public void StopBackGround()
