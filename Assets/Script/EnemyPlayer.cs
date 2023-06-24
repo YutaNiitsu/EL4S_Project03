@@ -14,6 +14,8 @@ public class EnemyPlayer : Player
 
     void Start()
     {
+        _moveSpeed = _defaultSpeed;
+
         _transform = GetComponent<Transform>();
 
         if(_player == null)
