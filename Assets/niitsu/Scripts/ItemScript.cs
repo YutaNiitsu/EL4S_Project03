@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Build;
 using UnityEngine;
 
 public class ItemScript : MonoBehaviour
 {
+    protected Player PlayerScriptRef;
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerScriptRef = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -19,7 +21,7 @@ public class ItemScript : MonoBehaviour
 
     public virtual void UseItem()
     {
-        Debug.Log("UseItem");
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

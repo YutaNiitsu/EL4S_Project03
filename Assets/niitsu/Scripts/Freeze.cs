@@ -23,9 +23,9 @@ public class Freeze : ItemScript
 
     IEnumerator UseItemCoroutine()
     {
-
+        PlayerScriptRef.SetSpeed(0.0f);
         yield return new WaitForSeconds(Time);
-
+        PlayerScriptRef.SetDefaultSpeed();
         // ÉAÉCÉeÉÄÇè¡ñ≈
         Destroy(this.gameObject);
         Debug.Log(this.gameObject.name);

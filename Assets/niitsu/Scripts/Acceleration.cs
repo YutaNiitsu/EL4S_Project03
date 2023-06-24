@@ -25,11 +25,10 @@ public class Acceleration : ItemScript
 
     IEnumerator UseItemCoroutine()
     {
-
+        PlayerScriptRef.SetSpeed(Speed);
         yield return new WaitForSeconds(Time);
-
+        PlayerScriptRef.SetDefaultSpeed();
         // ÉAÉCÉeÉÄÇè¡ñ≈
         Destroy(this.gameObject);
-        Debug.Log(this.gameObject.name);
     }
 }

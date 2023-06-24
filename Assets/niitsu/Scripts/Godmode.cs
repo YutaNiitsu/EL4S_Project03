@@ -24,9 +24,9 @@ public class Godmode : ItemScript
 
     IEnumerator UseItemCoroutine()
     {
-
+        PlayerScriptRef.SetGodFlag(true);
         yield return new WaitForSeconds(Time);
-
+        PlayerScriptRef.SetGodFlag(false);
         // ÉAÉCÉeÉÄÇè¡ñ≈
         Destroy(this.gameObject);
         Debug.Log(this.gameObject.name);
