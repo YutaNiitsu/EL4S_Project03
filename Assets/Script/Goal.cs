@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Goal : MonoBehaviour
     public bool _isGoal;
     private Transform _transform;
     public int _nowRank;
+
+    [SerializeField] private Color fadeColor = Color.black;
+    [SerializeField] private float fadeSpeedMultiplier = 10.0f;
     void Start()
     {
         _transform = GetComponent<Transform>();
@@ -23,10 +27,10 @@ public class Goal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < _player.Length; i++)
-		{
-            if(_player[i] != null)
-			{
+        for (int i = 0; i < _player.Length; i++)
+        {
+            if (_player[i] != null)
+            {
                 if (_player[i].GetMoveDistance() >= _goalPosition)
                 {
                     _isGoal = true;
@@ -46,8 +50,18 @@ public class Goal : MonoBehaviour
             }
         }
 
-        float distance = _goalPosition - _player[0].GetMoveDistance();
-        Vector3 pos = _transform.position;
-        _transform.position =  new Vector3(_player[0].transform.position.x + distance, pos.y, 0.0f);
+        if (!_isGoal)
+        {
+            float distance = _goalPosition - _player[0].GetMoveDistance();
+            Vector3 pos = _transform.position;
+            _transform.position = new Vector3(_player[0].transform.position.x + distance, pos.y, 0.0f);
+
+        }
+
+
+        if (_nowRank >= 4)
+        {
+            Initiate.Fade("Result", fadeColor, fadeSpeedMultiplier);
+        }
     }
 }

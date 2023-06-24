@@ -901,6 +901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GM
       objectReference: {fileID: 0}
+    - target: {fileID: 524377908843422562, guid: 8a60b07be5f513c469c4c1ec7763e5ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 524377908843422563, guid: 8a60b07be5f513c469c4c1ec7763e5ff, type: 3}
       propertyPath: Delay
       value: 0
