@@ -6,18 +6,7 @@ public class Acceleration : ItemScript
 {
     [Header("速い状態の速度")] public float Speed = 5;
     [Header("速い状態を維持する時間")] public float Time = 5;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     public override void UseItem()
     {
         StartCoroutine("UseItemCoroutine");
@@ -25,10 +14,11 @@ public class Acceleration : ItemScript
 
     IEnumerator UseItemCoroutine()
     {
-        PlayerScriptRef.SetSpeed(Speed);
+        if (PlayerScriptRef != null) PlayerScriptRef.SetSpeed(Speed);
         yield return new WaitForSeconds(Time);
-        PlayerScriptRef.SetDefaultSpeed();
+        if (PlayerScriptRef != null) PlayerScriptRef.SetDefaultSpeed();
         // アイテムを消滅
         Destroy(this.gameObject);
+        Debug.Log(this.gameObject.name);
     }
 }

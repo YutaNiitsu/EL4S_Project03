@@ -5,17 +5,7 @@ using UnityEngine;
 public class Freeze : ItemScript
 {
     [Header("í‚é~éûä‘")] public float Time = 5;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public override void UseItem()
     {
         StartCoroutine("UseItemCoroutine");
@@ -23,9 +13,9 @@ public class Freeze : ItemScript
 
     IEnumerator UseItemCoroutine()
     {
-        PlayerScriptRef.SetSpeed(0.0f);
+        if (PlayerScriptRef != null) PlayerScriptRef.SetSpeed(0.0f);
         yield return new WaitForSeconds(Time);
-        PlayerScriptRef.SetDefaultSpeed();
+        if (PlayerScriptRef != null) PlayerScriptRef.SetDefaultSpeed();
         // ÉAÉCÉeÉÄÇè¡ñ≈
         Destroy(this.gameObject);
         Debug.Log(this.gameObject.name);
