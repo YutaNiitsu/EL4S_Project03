@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4023379640165448137}
   m_Layer: 0
   m_Name: Item_Freeze
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f36465811c0c745aecaae543396168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Time: 5
