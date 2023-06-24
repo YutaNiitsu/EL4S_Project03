@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartScene : MonoBehaviour
+public class ResultScene : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,19 +17,13 @@ public class StartScene : MonoBehaviour
         
     }
 
-    public void OnClickStartButton()
+    public void OnClickReTryGameButton()
     {
         SceneManager.LoadScene("Game");
     }
 
-    public void OnClickExitButton()
+    public void OnClickBackTheTitleButton()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        SceneManager.LoadScene("Title");
     }
-
-
 }
