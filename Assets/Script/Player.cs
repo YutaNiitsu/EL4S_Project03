@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         _moveSpeed = _defaultSpeed;
-        //_isStart = false;
+        _isStart = false;
     }
 
     // Update is called once per frame
@@ -33,10 +33,15 @@ public class Player : MonoBehaviour
 	{
         return _moveDistance;
 	}
-    public void SetSpeed(float speed)
+    public void SetSpeed(float ratio)
 	{
-        _moveSpeed = speed;
+        _moveSpeed *= ratio;
 	}
+    public void SetDefaultSpeed()
+    {
+        _moveSpeed = _defaultSpeed;
+    }
+
     public void SetGodFlag(bool value)
 	{
         _isGodMode = value;
