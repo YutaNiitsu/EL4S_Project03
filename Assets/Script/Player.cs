@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     //[SerializeField] Item _nowItem;
     public float _moveDistance;
     protected bool _isGodMode;
+    public static int _playerRank = 0;
+    public static int[] _enemyRank = new int[2];
 
     void Start()
     {
@@ -45,6 +47,26 @@ public class Player : MonoBehaviour
     public void SetGodFlag(bool value)
 	{
         _isGodMode = value;
+	}
+
+    public void SetPlayerRank(int rank)
+	{
+        _playerRank = rank;
+	}
+
+    public void SetEnemyRank(int rank,int index)
+	{
+        _enemyRank[index] = rank;
+	}
+
+    static public int GetPlayerRank()
+	{
+        return _playerRank;
+	}
+
+    static public int[] GetEnemyRank()
+	{
+        return _enemyRank;
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
