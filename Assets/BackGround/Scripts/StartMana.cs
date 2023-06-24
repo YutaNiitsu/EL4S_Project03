@@ -20,6 +20,7 @@ public class StartMana : MonoBehaviour
         yield return new WaitForSeconds(Delay);
 
         StartBackGround();
+        //ここでスタート
     }
 
     public void StopBackGround()

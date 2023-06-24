@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class GoalMana : MonoBehaviour
 {
-    [SerializeField][Tooltip("Å‘åƒQ[ƒ€ŽžŠÔ")] private float MaXTime = 60.0f;
+    [Tooltip("Å‘åƒQ[ƒ€ŽžŠÔ")] public float MaXTime = 60.0f;
     [SerializeField] private StartMana StartMana;
-    private float nowatime;
+    [SerializeField] private Manager manager;
     // Start is called before the first frame update
     void Start()
     {
-        nowatime = 0.0f;
-        StartCoroutine(CheckTime());
     }
 
-    IEnumerator CheckTime()
+    private void Update()
     {
-        nowatime += Time.deltaTime;
-        yield return new WaitForSeconds(MaXTime+StartMana.Delay);
-        StartMana.StopBackGround();
+        if(manager.GetPlayerMovingDistanceRatio()>1.0f)
+        {
+            StartMana.StopBackGround();
+        }
     }
+    //IEnumerator CheckTime()
+    //{
+    //    nowatime += Time.deltaTime;
+    //    yield return new WaitForSeconds(MaXTime+StartMana.Delay);
+    //    StartMana.StopBackGround();
+    //}
 
-    public float TimeRate()
-    {
-        return nowatime / MaXTime+StartMana.Delay;
-    }
    
 }
