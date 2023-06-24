@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Goal : MonoBehaviour
     public bool _isGoal;
     private Transform _transform;
     public int _nowRank;
+
+    [SerializeField] private Color fadeColor = Color.black;
+    [SerializeField] private float fadeSpeedMultiplier = 10.0f;
     void Start()
     {
         _transform = GetComponent<Transform>();
@@ -29,7 +33,7 @@ public class Goal : MonoBehaviour
 			{
                 if (_player[i].GetMoveDistance() >= _goalPosition)
                 {
-                    _isGoal = true;
+                    //_isGoal = true;
                     Debug.Log("ŒÜ[[[‚é");
                     _player[i].SetSpeed(0.0f);
                     if (i == 0)
@@ -46,7 +50,16 @@ public class Goal : MonoBehaviour
             }
         }
 
-        float distance = _goalPosition - _player[0].GetMoveDistance();
-        _transform.position = _player[0].transform.position + new Vector3(distance, 0.0f, 0.0f);
+        if(!_isGoal)
+		{
+            float distance = _goalPosition - _player[0].GetMoveDistance();
+            _transform.position = _player[0].transform.position + new Vector3(distance, 0.0f, 0.0f);
+        }
+        
+
+        if(_nowRank >= 4)
+		{
+            Initiate.Fade("Result", fadeColor, fadeSpeedMultiplier);
+        }
     }
 }

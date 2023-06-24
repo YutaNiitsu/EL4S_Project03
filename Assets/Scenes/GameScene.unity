@@ -239,6 +239,7 @@ MonoBehaviour:
   _defaultSpeed: 1
   _moveSpeed: 0
   _isStart: 1
+  _moveDistance: 0
 --- !u!4 &252510976
 Transform:
   m_ObjectHideFlags: 0
@@ -351,7 +352,7 @@ GameObject:
   - component: {fileID: 503154455}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -371,6 +372,7 @@ MonoBehaviour:
   _defaultSpeed: 1
   _moveSpeed: 0
   _isStart: 1
+  _moveDistance: 0
 --- !u!4 &503154456
 Transform:
   m_ObjectHideFlags: 0
@@ -957,6 +959,7 @@ MonoBehaviour:
   _defaultSpeed: 1
   _moveSpeed: 0
   _isStart: 1
+  _moveDistance: 0
 --- !u!4 &1879758194
 Transform:
   m_ObjectHideFlags: 0
