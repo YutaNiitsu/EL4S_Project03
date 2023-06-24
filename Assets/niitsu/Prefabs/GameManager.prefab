@@ -49,10 +49,11 @@ MonoBehaviour:
   FreezePrefab: {fileID: 1930442056887369780, guid: 0392f347fcfe83744b536de04f9e9657, type: 3}
   GodmodePrefab: {fileID: 6356972755627423861, guid: ad4f08f801ff4ab4d85761cd49ea7867, type: 3}
   GameBGM: {fileID: 0}
-  ItemSpawnOffset: {x: 1000, y: 0, z: 0}
+  GoalDistance: 1000
+  ItemSpawnOffset: {x: 10, y: 0, z: 0}
   ItemSpawnSettings:
   - PlayerMoveDistance: 0
-    ratio: 0.2
+    ratio: 2
     itemSpawnSettings:
     - type: 0
       ratio: 0.3
