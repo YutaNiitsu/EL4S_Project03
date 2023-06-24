@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5b0cdc752908134fbef01dd40201a34
+guid: 84f546c94954ef14ba884c8c406e7ad6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AkioKun1 (1)_0
+      name: SigeruKun5 (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3651bc64f3d5d74a8aa9426a777667f
-      internalID: -1721081200
+      spriteID: c2c767527dcb72c4c9bec47703fb15d2
+      internalID: -332996377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AkioKun1 (1)_1
+      name: SigeruKun5 (1)_1
       rect:
         serializedVersion: 2
         x: 133
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 832dd8142f7bcbc4cb78f3df4ee8ceca
-      internalID: -1707603230
+      spriteID: ba62dc015688b2c47a3a8b386056126b
+      internalID: 2030227367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AkioKun1 (1)_2
+      name: SigeruKun5 (1)_2
       rect:
         serializedVersion: 2
         x: 266
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c2111a3d977bdb4ca0e4cdfca463369
-      internalID: 260374119
+      spriteID: c607c6567a26e0e41a6ce2f42e8b7197
+      internalID: -1018428732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AkioKun1 (1)_3
+      name: SigeruKun5 (1)_3
       rect:
         serializedVersion: 2
         x: 399
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc03a74f9ede12e439613694d696a578
-      internalID: 2086126004
+      spriteID: c9539ffc288bc1845848baf65da9fece
+      internalID: 82259874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AkioKun1 (1)_4
+      name: SigeruKun5 (1)_4
       rect:
         serializedVersion: 2
         x: 532
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a46beae81de06c4ab3b9a2caa2e593d
-      internalID: -1336844412
+      spriteID: 72d347bcade2d6444830a3fd09d2d799
+      internalID: -361786619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AkioKun1 (1)_5
+      name: SigeruKun5 (1)_5
       rect:
         serializedVersion: 2
         x: 665
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b31159d8aaa4c2e478615aba75b69fba
-      internalID: 145854089
+      spriteID: 05a5c398130bb7541b86b71b295d3513
+      internalID: 774028158
       vertices: []
       indices: 
       edges: []
@@ -241,12 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AkioKun1 (1)_2: 260374119
-      AkioKun1 (1)_0: -1721081200
-      AkioKun1 (1)_3: 2086126004
-      AkioKun1 (1)_5: 145854089
-      AkioKun1 (1)_1: -1707603230
-      AkioKun1 (1)_4: -1336844412
+      SigeruKun5 (1)_1: 2030227367
+      SigeruKun5 (1)_2: -1018428732
+      SigeruKun5 (1)_3: 82259874
+      SigeruKun5 (1)_5: 774028158
+      SigeruKun5 (1)_0: -332996377
+      SigeruKun5 (1)_4: -361786619
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

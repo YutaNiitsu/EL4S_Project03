@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float _defaultSpeed = 1.0f;
-    [SerializeField] float _moveSpeed;
-    [SerializeField] bool _isStart;
+    [SerializeField] public float _defaultSpeed = 1.0f;
+    [SerializeField] public float _moveSpeed;
+    [SerializeField] public bool _isStart;
     //[SerializeField] Item _nowItem;
-    private float _moveDistance;
-    private bool _isGodMode;
+    public float _moveDistance;
+    protected bool _isGodMode;
 
     void Start()
     {
         _moveSpeed = _defaultSpeed;
-        _isStart = false;
+        //_isStart = false;
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
             _moveDistance += _moveSpeed;
 
 		}
+        
     }
 
     public float GetMoveDistance()
