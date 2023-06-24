@@ -17,7 +17,7 @@ public class Goal : MonoBehaviour
         if (_player == null)
             Debug.LogError("Playerが見つかりません。アタッチしてください");
 
-        _nowRank = 0;
+        _nowRank = 1;
     }
 
     // Update is called once per frame
