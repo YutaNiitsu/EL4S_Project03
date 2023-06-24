@@ -49,6 +49,11 @@ public class Player : MonoBehaviour
         _isGodMode = value;
 	}
 
+    public void SetIsStart(bool value)
+    {
+        _isStart = value;
+    }
+
     public void SetPlayerRank(int rank)
 	{
         _playerRank = rank;
@@ -56,7 +61,7 @@ public class Player : MonoBehaviour
 
     public void SetEnemyRank(int rank,int index)
 	{
-        _enemyRank[index] = rank;
+        _enemyRank[index-1] = rank;
 	}
 
     static public int GetPlayerRank()

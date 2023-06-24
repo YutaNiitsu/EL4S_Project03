@@ -47,6 +47,7 @@ public class Goal : MonoBehaviour
         }
 
         float distance = _goalPosition - _player[0].GetMoveDistance();
-        _transform.position = _player[0].transform.position + new Vector3(distance, 0.0f, 0.0f);
+        Vector3 pos = _transform.position;
+        _transform.position =  new Vector3(_player[0].transform.position.x + distance, pos.y, 0.0f);
     }
 }
