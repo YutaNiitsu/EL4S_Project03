@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Godmode : ItemScript
 {
-    [Header("–³“Gó‘Ô‚ÌŠÔ")] public float Time = 5;
+    [Header("–³“Gó‘Ô‚ÌŠÔ")] public float Time = 3;
     
     public override void UseItem()
     {
