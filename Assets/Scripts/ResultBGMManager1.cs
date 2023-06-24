@@ -22,7 +22,7 @@ public class ResultBGMManager1 : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.loop = true;
         winlose = Player.GetPlayerRank();
-        if (winlose == 0)
+        if (winlose == 2)
         {
             PlayBGM(0);
         }
