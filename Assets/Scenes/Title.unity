@@ -659,6 +659,8 @@ GameObject:
   m_Component:
   - component: {fileID: 495751630}
   - component: {fileID: 495751629}
+  - component: {fileID: 495751631}
+  - component: {fileID: 495751632}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -695,6 +697,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &495751631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495751628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636284a5614e4fc4c895f07b887bd114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmClips:
+  - {fileID: 8300000, guid: 2210d0c07f1cda64a84d7e0feb294af3, type: 3}
+--- !u!114 &495751632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495751628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcc6c86045d584458360da577b35050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seClips:
+  - {fileID: 8300000, guid: f0b0b1c365b40ed479a56702d63cd4c3, type: 3}
 --- !u!1 &742064256
 GameObject:
   m_ObjectHideFlags: 0

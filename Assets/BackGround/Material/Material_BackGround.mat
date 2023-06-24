@@ -57,7 +57,7 @@ Material:
     - _Rotate: 0
     - _Speed: 0.3
     - _isScrollerX: 1
-    - _isStop: 1
+    - _isStop: 0
     m_Colors:
     - _Offset: {r: 30.25, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
