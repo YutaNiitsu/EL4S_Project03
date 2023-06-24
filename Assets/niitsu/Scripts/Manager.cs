@@ -11,12 +11,12 @@ public class Manager : MonoBehaviour
     [SerializeField] public GameObject FreezePrefab;
     [SerializeField] public GameObject GodmodePrefab;
     [SerializeField] public AudioSource GameBGM;
+    [SerializeField] public float GoalDistance = 1000;
     [SerializeField] public Vector3 ItemSpawnOffset;
     [SerializeField] public ItemSpawn[] ItemSpawnSettings;
     private Player PlayerRef;
     private Vector3 PlayerStartPosition;
     private Transform PlayerTransform;
-    private float MoveDistance = 0;
     private float TimeCount = 0;
 
      [System.Serializable]
@@ -63,6 +63,12 @@ public class Manager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    // スタートからゴールまでの距離に対する進んだ割合
+    public float GetPlayerMovingDistanceRatio()
+    {
+        return PlayerRef.GetMoveDistance() / GoalDistance;
     }
 
     void ItemInstantiate()
