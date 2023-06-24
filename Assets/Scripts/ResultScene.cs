@@ -9,21 +9,31 @@ public class ResultScene : MonoBehaviour
     [SerializeField] private float fadeSpeedMultiplier = 10.0f;
     ClickSE click;
     private int winlose;
+    [SerializeField] private GameObject win;
+    [SerializeField] private GameObject lose;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        win.SetActive(false);
+        lose.SetActive(false);
+
         click = this.GetComponent<ClickSE>();
         //click.PlaySE(1);
         //click.PlaySE(2);
         winlose = Player.GetPlayerRank();
-        if (winlose == 0)
+        //winlose = 2;
+        if (winlose == 2)
         {
             click.PlaySE(1);
+            win.SetActive(true);
         }
         else
         {
             click.PlaySE(2);
+            lose.SetActive(true);
         }
 
     }
