@@ -27,7 +27,7 @@ public class CharaUI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //キャラクター内のポジションをもらう
         float playerPos = _player.GetMoveDistance()/*TODO:内部パラメータをもらう*/ * _oneMoveLength + _startPos;
