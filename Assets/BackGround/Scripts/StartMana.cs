@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TStartMana : MonoBehaviour
+public class StartMana : MonoBehaviour
 {
     public float Delay = 3.0f;
     [SerializeField][Tooltip("背景のマテリアル選択")] private Material BackGround;
