@@ -30,7 +30,7 @@ public class TitleScene : MonoBehaviour
     {
         //settingsWindowController.OnClickCloseButton();
         //SceneManager.LoadScene("Game");
-        Initiate.Fade("Game", fadeColor, fadeSpeedMultiplier);
+        Initiate.Fade("GameScene", fadeColor, fadeSpeedMultiplier);
     }
 
     public void OnClickExitButton()

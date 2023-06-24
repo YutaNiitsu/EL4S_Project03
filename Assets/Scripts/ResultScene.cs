@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ResultScene : MonoBehaviour
 {
+    [SerializeField] private Color fadeColor = Color.black;
+    [SerializeField] private float fadeSpeedMultiplier = 10.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +22,12 @@ public class ResultScene : MonoBehaviour
 
     public void OnClickReTryGameButton()
     {
-        SceneManager.LoadScene("Game");
+        Initiate.Fade("GameScene", fadeColor, fadeSpeedMultiplier);
     }
 
     public void OnClickBackTheTitleButton()
     {
-        SceneManager.LoadScene("Title");
+        Initiate.Fade("Title", fadeColor, fadeSpeedMultiplier);
+
     }
 }
