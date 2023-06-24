@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Manager;
+using static UnityEditor.PlayerSettings;
 
 public class Manager : MonoBehaviour
 {
@@ -14,11 +16,12 @@ public class Manager : MonoBehaviour
     [SerializeField] public float GoalDistance = 1000;
     [SerializeField] public Vector3 ItemSpawnOffset;
     [SerializeField] public ItemSpawn[] ItemSpawnSettings;
+
     private Player PlayerRef;
     private Vector3 PlayerStartPosition;
     private Transform PlayerTransform;
     private float TimeCount = 0;
-
+    private GameObject Item;
      [System.Serializable]
     public enum ItemType
     {
@@ -57,12 +60,26 @@ public class Manager : MonoBehaviour
     private void FixedUpdate()
     {
         TimeCount += Time.deltaTime;
-        ItemInstantiate();
+        
     }
     // Update is called once per frame
     void Update()
     {
-
+        float dist = PlayerRef.GetMoveDistance();
+        if (Input.GetKey(KeyCode.Alpha1)) Item = AccelerationPrefab;
+        if (Input.GetKey(KeyCode.Alpha2)) Item = SlowingDownPrefab;
+        if (Input.GetKey(KeyCode.Alpha3)) Item = FreezePrefab;
+        if (Input.GetKey(KeyCode.Alpha4)) Item = GodmodePrefab;
+        Vector3 mousePosition = Input.mousePosition;
+        Vector3 target = Camera.main.ScreenToWorldPoint(mousePosition);
+        target.z = 0.0f;
+        if (Input.GetMouseButtonDown(0) && Item != null)
+        {
+            Quaternion q = new Quaternion(0, 0, 0, 0);
+            
+            Instantiate(Item, target, q);
+            Debug.Log(target);
+        }
     }
 
     // スタートからゴールまでの距離に対する進んだ割合
@@ -73,7 +90,7 @@ public class Manager : MonoBehaviour
 
     void ItemInstantiate()
     {
-        // プレイヤー移動距離
+        //// プレイヤー移動距離
         //float dist = PlayerRef.GetMoveDistance();
         //int index = 0;
         //foreach (ItemSpawn itr in ItemSpawnSettings)
@@ -84,14 +101,14 @@ public class Manager : MonoBehaviour
         //    }
         //    index++;
         //}
-        ////if (TimeCount > 1 / ItemSpawnSettings[index].ratio)
-        ////{
-        ////    TimeCount = 0;
-        ////}
-        ////else
-        ////{
-        ////    return;
-        ////}
+        //if (TimeCount > 1 / ItemSpawnSettings[index].ratio)
+        //{
+        //    TimeCount = 0;
+        //}
+        //else
+        //{
+        //    return;
+        //}
         //float rnd = Random.Range(0.0f, 1.0f);
         //float rnd2 = Random.Range(-4.0f, 4.0f);
         //float ratio = 0;
@@ -111,5 +128,22 @@ public class Manager : MonoBehaviour
         //    }
         //    ratio += itr.ratio;
         //}
+    }
+
+    public void SetItem_Acceleration()
+    {
+        
+    }
+    public void SetItem_SlowingDown()
+    {
+        Item = SlowingDownPrefab;
+    }
+    public void SetItem_Freeze()
+    {
+        Item = FreezePrefab;
+    }
+    public void SetItem_Godmode()
+    {
+        Item = GodmodePrefab;
     }
 }
