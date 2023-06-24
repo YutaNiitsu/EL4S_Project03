@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SlowingDown : ItemScript
 {
-    [Header("遅い状態の速度")] public float Speed = 1;
-    [Header("遅い状態を維持する時間")] public float Time = 5;
+    [Header("速度を減らす割合")] public float Ratio = 0.5f;
+    [Header("遅い状態を維持する時間")] public float Time = 3;
    
     public override void UseItem()
     {
@@ -14,7 +14,7 @@ public class SlowingDown : ItemScript
 
     IEnumerator UseItemCoroutine()
     {
-        if (PlayerScriptRef != null) PlayerScriptRef.SetSpeed(Speed);
+        if (PlayerScriptRef != null) PlayerScriptRef.SetSpeed(Ratio);
         yield return new WaitForSeconds(Time);
         if (PlayerScriptRef != null) PlayerScriptRef.SetDefaultSpeed();
         // アイテムを消滅

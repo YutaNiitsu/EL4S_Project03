@@ -32,9 +32,9 @@ public class Player : MonoBehaviour
 	{
         return _moveDistance;
 	}
-    public void SetSpeed(float speed)
+    public void SetSpeed(float ratio)
 	{
-        _moveSpeed = speed;
+        _moveSpeed *= ratio;
 	}
     public void SetDefaultSpeed()
     {
