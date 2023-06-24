@@ -93,13 +93,14 @@ public class Manager : MonoBehaviour
             return;
         }
         float rnd = Random.Range(0.0f, 1.0f);
+        float rnd2 = Random.Range(-4.0f, 4.0f);
         float ratio = 0;
         // ÉAÉCÉeÉÄê›íËéÊìæ
         foreach (ItemSpawnSetting itr in ItemSpawnSettings[index].itemSpawnSettings)
         {
             if (ratio <= rnd && ratio + itr.ratio > rnd)
             {
-                Vector3 pos = PlayerRef.transform.position + ItemSpawnOffset;
+                Vector3 pos = new Vector3(0.0f, rnd2, 0.0f) + ItemSpawnOffset;
                 Quaternion q = new Quaternion(0, 0, 0, 0);
                 if (itr.type == ItemType.Acceleration) Instantiate(AccelerationPrefab, pos, q);
                 if (itr.type == ItemType.SlowingDown) Instantiate(SlowingDownPrefab, pos, q);

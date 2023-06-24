@@ -6,13 +6,17 @@ using UnityEngine;
 
 public class ItemScript : MonoBehaviour
 {
+    [Header("アイテムの速度")] public float Speed = 0.2f;
     protected Player PlayerScriptRef;
     // Start is called before the first frame update
     void Start()
     {
         PlayerScriptRef = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
-
+    private void FixedUpdate()
+    {
+        transform.position += new Vector3(-Speed, 0.0f, 0.0f); 
+    }
     // Update is called once per frame
     void Update()
     {
