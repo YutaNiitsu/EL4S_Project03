@@ -5,29 +5,48 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     [SerializeField] public float _goalPosition = 1000.0f;
-    [SerializeField] public Player _player;
+    [SerializeField] public Player[] _player;
 
     public bool _isGoal;
     private Transform _transform;
+    public int _nowRank;
     void Start()
     {
         _transform = GetComponent<Transform>();
 
         if (_player == null)
             Debug.LogError("Playerが見つかりません。アタッチしてください");
+
+        _nowRank = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_player.GetMoveDistance() >= _goalPosition)
+        for(int i = 0; i < _player.Length; i++)
 		{
-            _isGoal = true;
-            Debug.Log("五ーーーる");
-            _player.SetSpeed(0.0f);
-		}
+            if(_player[i] != null)
+			{
+                if (_player[i].GetMoveDistance() >= _goalPosition)
+                {
+                    _isGoal = true;
+                    Debug.Log("五ーーーる");
+                    _player[i].SetSpeed(0.0f);
+                    if (i == 0)
+                    {
+                        _player[i].SetPlayerRank(_nowRank);
+                    }
+                    else
+                    {
+                        _player[i].SetEnemyRank(_nowRank, i);
+                    }
+                    _player[i] = null;
+                    _nowRank++;
+                }
+            }
+        }
 
-        float distance = _goalPosition - _player.GetMoveDistance();
-        _transform.position = _player.transform.position + new Vector3(distance, 0.0f, 0.0f);
+        float distance = _goalPosition - _player[0].GetMoveDistance();
+        _transform.position = _player[0].transform.position + new Vector3(distance, 0.0f, 0.0f);
     }
 }
