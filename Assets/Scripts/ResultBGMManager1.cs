@@ -24,11 +24,11 @@ public class ResultBGMManager1 : MonoBehaviour
         winlose = Player.GetPlayerRank();
         if (winlose == 0)
         {
-            PlayBGM(1);
+            PlayBGM(0);
         }
         else
         {
-            PlayBGM(2);
+            PlayBGM(1);
         }
 
     }
