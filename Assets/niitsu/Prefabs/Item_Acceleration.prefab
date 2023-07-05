@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.2
-  Ratio: 0.5
+  Ratio: 2
   Time: 3
